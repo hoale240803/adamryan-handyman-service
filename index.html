@@ -114,6 +114,34 @@
     .text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 17px; color: var(--gold-light); font-size: .86rem; font-weight: 800; }
     .text-link:hover { gap: 12px; }
 
+
+    .service-content .text-link { text-decoration: none; }
+    .service-detail { padding: 76px 0; border-top: 1px solid rgba(215,166,75,.16); background: linear-gradient(180deg, #101113, #0b0c0d); scroll-margin-top: 88px; }
+    .service-detail:nth-of-type(even) { background: #0c0d0e; }
+    .service-detail-grid { display: grid; grid-template-columns: .82fr 1.18fr; align-items: center; gap: clamp(28px, 5vw, 64px); }
+    .service-detail-copy h2 { margin: 12px 0; font: 700 clamp(2rem, 4vw, 3.1rem)/1.05 "Cormorant Garamond", Georgia, serif; letter-spacing: -.035em; }
+    .service-detail-copy p { color: var(--muted); margin: 0; }
+    .service-detail-copy .btn { margin-top: 24px; }
+    .gallery-shell { min-width: 0; border: 1px solid rgba(215,166,75,.35); border-radius: 15px; padding: 10px; background: #121315; box-shadow: var(--shadow); }
+    .gallery-stage { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: 9px; background: #08090a; }
+    .gallery-stage img, .gallery-stage video { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-stage video { background: #000; }
+    .gallery-type { position: absolute; z-index: 2; top: 13px; left: 13px; padding: 6px 10px; border: 1px solid rgba(244,217,154,.6); border-radius: 999px; background: rgba(8,9,10,.78); color: var(--gold-light); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; pointer-events: none; }
+    .gallery-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 4px 3px; }
+    .gallery-caption { min-width: 0; }
+    .gallery-caption strong { display: block; font: 700 1.1rem "Cormorant Garamond", Georgia, serif; }
+    .gallery-caption small { color: var(--muted); }
+    .gallery-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .gallery-arrow { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--gold-light); cursor: pointer; transition: background .2s, border-color .2s; }
+    .gallery-arrow:hover { border-color: var(--gold); background: rgba(215,166,75,.12); }
+    .gallery-count { min-width: 48px; color: var(--muted); text-align: center; font-size: .8rem; font-variant-numeric: tabular-nums; }
+    .gallery-dots { display: flex; justify-content: center; gap: 7px; padding: 8px 0 2px; }
+    .gallery-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 999px; background: #555; cursor: pointer; transition: width .2s, background .2s; }
+    .gallery-dot[aria-current="true"] { width: 22px; background: var(--gold); }
+    .gallery-note { margin-top: 12px; color: #8f8d87; font-size: .76rem; }
+    @media (max-width: 800px) { .service-detail-grid { grid-template-columns: 1fr; gap: 24px; } .service-detail-copy { max-width: 650px; } }
+    @media (max-width: 560px) { .service-detail { padding: 54px 0; } .gallery-shell { padding: 7px; } .gallery-controls { gap: 6px; } .gallery-caption strong { font-size: 1rem; } .gallery-arrow { width: 36px; height: 36px; } .gallery-stage { aspect-ratio: 4 / 3; } }
+
     .portfolio { background: #0c0d0e; }
     .portfolio-top { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
     .portfolio-top .section-heading { margin-bottom: 28px; }
@@ -302,23 +330,180 @@
       <div class="container">
         <div class="section-heading reveal"><span class="eyebrow">What We Do</span><h2>Thoughtful work. <span class="gold">Beautiful results.</span></h2><p>From small repairs to room refreshes, get help making your home work better and look its best.</p></div>
         <div class="services-grid">
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-1.jpg" alt="Flooring and interior home improvement" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h18M3 16h18M8 3v5m8-5v5M8 16v5m8-5v5"/><path d="M3 3h18v18H3z"/></svg></span><h3>Flooring Installation</h3><p>Laminate, vinyl, and hardwood flooring installed with care for a clean, lasting finish.</p><a class="text-link" href="#contact">Discuss your project <span>→</span></a></div></article>
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-2.jpg" alt="Interior repair and finishing work" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V4h16v16H4Z"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></span><h3>Drywall &amp; Repairs</h3><p>Patch holes, repair damaged drywall, and smooth surfaces for a more polished room.</p><a class="text-link" href="#contact">Discuss your project <span>→</span></a></div></article>
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-3.jpg" alt="Interior home finishing details" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m14 4 6 6M3 21l4.5-1 11-11a2.1 2.1 0 0 0-3-3l-11 11L3 21Z"/><path d="m12 6 6 6"/></svg></span><h3>Interior &amp; Exterior Painting</h3><p>Refresh walls, trim, and exterior surfaces with neat preparation and careful finishing.</p><a class="text-link" href="#contact">Discuss your project <span>→</span></a></div></article>
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-4.jpg" alt="Home renovation and surface finishing" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10 12 3l9 7v10H3V10Z"/><path d="M9 20v-6h6v6M3 10h18"/></svg></span><h3>Countertops &amp; Cabinets</h3><p>Countertop installation and repair, cabinet updates, and practical kitchen improvements.</p><a class="text-link" href="#contact">Discuss your project <span>→</span></a></div></article>
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-5.jpg" alt="Finished residential interior" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 3 8v8l9 5 9-5V8l-9-5Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><h3>General Home Repairs</h3><p>Everyday fixes, small upgrades, and maintenance tasks to help keep your home in shape.</p><a class="text-link" href="#contact">Discuss your project <span>→</span></a></div></article>
-          <article class="service-card reveal"><div class="service-image"><img src="images/anh-6.jpg" alt="Home remodeling project detail" loading="lazy" /></div><div class="service-content"><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5h16v14H4Z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></span><h3>Free Consultations</h3><p>Talk through your goals, understand the scope, and request a straightforward project estimate.</p><a class="text-link" href="#contact">Get in touch <span>→</span></a></div></article>
+          <article class="service-card reveal"><a href="#service-flooring" aria-label="View Flooring Installation gallery"><div class="service-image"><img src="images/floor-after-1.jpg" alt="Flooring installation project" loading="lazy" /></div><div class="service-content"><span class="service-icon">▦</span><h3>Flooring Installation</h3><p>Laminate, vinyl, and hardwood flooring installed with care for a clean, lasting finish.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
+          <article class="service-card reveal"><a href="#service-drywall" aria-label="View Drywall and Repairs gallery"><div class="service-image"><img src="images/drywall.jpg" alt="Drywall repair and finishing project" loading="lazy" /></div><div class="service-content"><span class="service-icon">▤</span><h3>Drywall &amp; Repairs</h3><p>Patch holes, repair damaged drywall, and smooth surfaces for a more polished room.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
+          <article class="service-card reveal"><a href="#service-painting" aria-label="View Painting gallery"><div class="service-image"><img src="images/painting.jpg" alt="Interior and exterior painting project" loading="lazy" /></div><div class="service-content"><span class="service-icon">♢</span><h3>Interior &amp; Exterior Painting</h3><p>Refresh walls, trim, and exterior surfaces with neat preparation and careful finishing.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
+          <article class="service-card reveal"><a href="#service-tile" aria-label="View Tile Work and Bathroom Remodels gallery"><div class="service-image"><img src="images/tile-work-1.jpg" alt="Tile work and bathroom remodeling project" loading="lazy" /></div><div class="service-content"><span class="service-icon">◇</span><h3>Tile Work &amp; Bathroom Remodels</h3><p>Bathroom updates, tile installation, and clean, carefully finished surfaces.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
+          <article class="service-card reveal"><a href="#service-countertops" aria-label="View Countertops and Cabinets gallery"><div class="service-image"><img src="images/anh-1.jpg" alt="Countertop installation and cabinet project" loading="lazy" /></div><div class="service-content"><span class="service-icon">⌂</span><h3>Countertops &amp; Cabinets</h3><p>Countertop installation and repair, cabinet updates, and practical kitchen improvements.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
+          <article class="service-card reveal"><a href="#service-repairs" aria-label="View General Home Repairs gallery"><div class="service-image"><img src="images/anh-4.jpg" alt="General home repair project" loading="lazy" /></div><div class="service-content"><span class="service-icon">⌘</span><h3>General Home Repairs</h3><p>Everyday fixes, small upgrades, and maintenance tasks to help keep your home in shape.</p><span class="text-link">View photos &amp; videos <span>→</span></span></div></a></article>
         </div>
       </div>
     </section>
 
+
+    <section class="service-detail reveal" id="service-flooring" aria-labelledby="heading-flooring">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-flooring">Flooring Installation<br><span class="gold">Beautiful floors start with careful preparation.</span></h2>
+          <p>Laminate, vinyl plank, and hardwood flooring. Browse project photos and video clips from the work.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="flooring" aria-label="Flooring Installation slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/floor-after-1.jpg" alt="Flooring project" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Flooring project</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service-detail reveal" id="service-drywall" aria-labelledby="heading-drywall">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-drywall">Drywall & Repairs<br><span class="gold">Smooth walls. Clean finishes.</span></h2>
+          <p>From patching and surface preparation to drywall installation and repairs.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="drywall" aria-label="Drywall & Repairs slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/anh-1.jpg" alt="Drywall project" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Drywall project</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service-detail reveal" id="service-painting" aria-labelledby="heading-painting">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-painting">Interior & Exterior Painting<br><span class="gold">A fresh finish makes a difference.</span></h2>
+          <p>Interior walls, trim, and exterior painting completed with care and attention to detail.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="painting" aria-label="Interior & Exterior Painting slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/anh-1.jpg" alt="Painting project" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Painting project</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service-detail reveal" id="service-tile" aria-labelledby="heading-tile">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-tile">Tile Work & Bathroom Remodels<br><span class="gold">Better details for everyday spaces.</span></h2>
+          <p>Bathroom refreshes, tile work, and surface upgrades. This category is for bathroom remodel photos and videos.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="tile" aria-label="Tile Work & Bathroom Remodels slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/anh-1.jpg" alt="Bathroom remodel" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Bathroom remodel</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service-detail reveal" id="service-countertops" aria-labelledby="heading-countertops">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-countertops">Countertops & Cabinets<br><span class="gold">Practical upgrades, finished beautifully.</span></h2>
+          <p>Countertop installation and repair, cabinet updates, and kitchen improvements.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="countertops" aria-label="Countertops & Cabinets slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/anh-1.jpg" alt="Countertop project" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Countertop project</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
+    <section class="service-detail reveal" id="service-repairs" aria-labelledby="heading-repairs">
+      <div class="container service-detail-grid">
+        <div class="service-detail-copy">
+          <span class="eyebrow">Project Gallery</span>
+          <h2 id="heading-repairs">General Home Repairs<br><span class="gold">Small fixes. Done thoughtfully.</span></h2>
+          <p>Everyday home repairs, upgrades, and maintenance projects.</p>
+          <a class="btn" href="#contact">Request a Free Quote <span aria-hidden="true">→</span></a>
+          <p class="gallery-note">Use the arrows to browse photos and videos for this service.</p>
+        </div>
+        <div class="gallery-shell" data-gallery="repairs" aria-label="General Home Repairs slideshow">
+          <div class="gallery-stage">
+            <span class="gallery-type">Project photo</span>
+            <img src="images/anh-1.jpg" alt="Home repair" loading="lazy">
+          </div>
+          <div class="gallery-controls">
+            <div class="gallery-caption"><strong>Home repair</strong><small>Affordable Finishes · Project gallery</small></div>
+            <div class="gallery-actions">
+              <button class="gallery-arrow" type="button" data-prev aria-label="Previous item">←</button>
+              <span class="gallery-count" aria-live="polite">1 / 3</span>
+              <button class="gallery-arrow" type="button" data-next aria-label="Next item">→</button>
+            </div>
+          </div>
+          <div class="gallery-dots" aria-label="Choose slideshow item"></div>
+        </div>
+      </div>
+    </section>
     <section class="section portfolio" id="projects">
       <div class="container">
-        <div class="portfolio-top"><div class="section-heading reveal"><span class="eyebrow">Recent Work</span><h2>Details make <span class="gold">the difference.</span></h2><p>A look at the kind of home projects we help bring to life. Replace these sample placements with your best project photos and clips.</p></div><a class="btn btn-secondary" href="#contact">Start a Project <span>→</span></a></div>
+        <div class="portfolio-top"><div class="section-heading reveal"><span class="eyebrow">Recent Work</span><h2>Details make <span class="gold">the difference.</span></h2><p>Explore selected projects, with dedicated photo and video galleries organized by service above.</p></div><a class="btn btn-secondary" href="#contact">Start a Project <span>→</span></a></div>
         <div class="portfolio-grid">
           <article class="project reveal"><img src="images/anh-7.jpg" alt="Home remodeling project showcase" loading="lazy" /><div class="project-caption"><span>Home Improvement</span><h3>Finishing Details</h3></div></article>
           <article class="project reveal"><img src="images/anh-8.jpg" alt="Repair and renovation detail" loading="lazy" /><div class="project-caption"><span>Repairs</span><h3>Built with Care</h3></div></article>
-          <article class="project reveal"><video controls preload="metadata" playsinline aria-label="Affordable Finishes project video"><source src="videos/video-2.mp4" type="video/mp4" />Your browser does not support embedded video.</video><div class="project-caption"><span>Project Video</span><h3>Watch the Work</h3></div></article>
+          <article class="project reveal"><video controls preload="metadata" playsinline aria-label="Affordable Finishes project video"><source src="videos/drywall.mp4" type="video/mp4" />Your browser does not support embedded video.</video><div class="project-caption"><span>Project Video</span><h3>Watch the Work</h3></div></article>
           <article class="project reveal"><img src="images/anh-9.jpg" alt="Residential interior finish" loading="lazy" /><div class="project-caption"><span>Interior</span><h3>A Fresh Look</h3></div></article>
           <article class="project reveal"><img src="images/anh-10.jpg" alt="Residential improvement work" loading="lazy" /><div class="project-caption"><span>Craftsmanship</span><h3>Made to Feel Right</h3></div></article>
         </div>
@@ -422,6 +607,121 @@
         } catch (error) {
           showToast('Call +1 (313) 213-0980 to get in touch.');
         }
+      });
+
+
+      // Update each service's paths here when adding or replacing gallery media.
+      const sharedGalleryMedia = [
+        { type: 'image', src: 'images/anh-1.jpg', title: 'Project photo' },
+        { type: 'image', src: 'images/anh-2.jpg', title: 'Project detail' },
+        { type: 'video', src: 'videos/video-1.mp4', title: 'Project video' }
+      ];
+      const serviceGalleryMedia = {
+        flooring: [
+          { type: 'image', src: 'images/floor-after-1.jpg', title: 'Flooring installation' },
+          { type: 'video', src: 'videos/video-1.mp4', title: 'Flooring installation video' }
+        ],
+        drywall: [
+          { type: 'image', src: 'images/drywall.jpg', title: 'Drywall repair' },
+          { type: 'video', src: 'videos/drywall.mp4', title: 'Drywall repair video' }
+        ],
+        painting: [
+          { type: 'image', src: 'images/painting.jpg', title: 'Painting and finishing' },
+          { type: 'video', src: 'videos/painting-video.mp4', title: 'Painting project video' }
+        ],
+        tile: [
+          { type: 'image', src: 'images/tile-work-1.jpg', title: 'Tile work and bathroom remodel' },
+          { type: 'image', src: 'images/tile-work-2.jpg', title: 'Tile work detail' },
+          { type: 'image', src: 'images/tile-work.jpg', title: 'Bathroom remodel' },
+          { type: 'video', src: 'videos/video-2.mp4', title: 'Tile work project video' }
+        ],
+        countertops: [
+          { type: 'image', src: 'images/anh-1.jpg', title: 'Countertops and cabinets' },
+          { type: 'image', src: 'images/anh-2.jpg', title: 'Countertops and cabinets' },
+          { type: 'image', src: 'images/anh-3.jpg', title: 'Countertops and cabinets' },
+          // { type: 'image', src: 'images/anh-4.jpg', title: 'Countertops and cabinets' },
+          // { type: 'image', src: 'images/anh-5.jpg', title: 'Countertops and cabinets' },
+          // { type: 'image', src: 'images/anh-6.jpg', title: 'Countertops and cabinets' },
+          // { type: 'video', src: 'videos/video-1.mp4', title: 'Countertops and cabinets project video' }
+        ],
+        repairs: [
+          // { type: 'image', src: 'images/anh-1.jpg', title: 'General home repair' },
+          // { type: 'image', src: 'images/anh-2.jpg', title: 'General home repair' },
+          // { type: 'image', src: 'images/anh-3.jpg', title: 'General home repair' },
+          { type: 'image', src: 'images/anh-4.jpg', title: 'General home repair' },
+          { type: 'image', src: 'images/anh-5.jpg', title: 'General home repair' },
+          { type: 'image', src: 'images/anh-6.jpg', title: 'General home repair' },
+          // { type: 'video', src: 'videos/video-1.mp4', title: 'General home repair project video' }
+        ]
+      };
+      document.querySelectorAll('[data-gallery]').forEach(gallery => {
+        const key = gallery.dataset.gallery;
+        const categoryTitles = {
+          flooring: 'Flooring installation',
+          drywall: 'Drywall repair',
+          painting: 'Painting and finishing',
+          tile: 'Tile work and bathroom remodel',
+          countertops: 'Countertops and cabinets',
+          repairs: 'General home repair'
+        };
+        const items = (serviceGalleryMedia[key] || sharedGalleryMedia).map(item => ({
+          ...item,
+          title: serviceGalleryMedia[key] ? item.title : categoryTitles[key] || item.title
+        }));
+        const stage = gallery.querySelector('.gallery-stage');
+        const count = gallery.querySelector('.gallery-count');
+        const caption = gallery.querySelector('.gallery-caption strong');
+        const dots = gallery.querySelector('.gallery-dots');
+        let index = 0;
+
+        function render() {
+          const item = items[index];
+          stage.replaceChildren();
+          const badge = document.createElement('span');
+          badge.className = 'gallery-type';
+          badge.textContent = item.type === 'video' ? 'Project video' : 'Project photo';
+          stage.appendChild(badge);
+
+          let media;
+          if (item.type === 'video') {
+            media = document.createElement('video');
+            media.controls = true;
+            media.preload = 'metadata';
+            media.playsInline = true;
+            media.setAttribute('aria-label', item.title);
+            const source = document.createElement('source');
+            source.src = item.src;
+            source.type = 'video/mp4';
+            media.appendChild(source);
+          } else {
+            media = document.createElement('img');
+            media.src = item.src;
+            media.alt = item.title;
+            media.loading = 'lazy';
+          }
+          stage.appendChild(media);
+          count.textContent = `${index + 1} / ${items.length}`;
+          caption.textContent = item.title;
+          dots.replaceChildren();
+          items.forEach((_, dotIndex) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'gallery-dot';
+            dot.setAttribute('aria-label', `Show item ${dotIndex + 1}`);
+            dot.setAttribute('aria-current', String(dotIndex === index));
+            dot.addEventListener('click', () => { index = dotIndex; render(); });
+            dots.appendChild(dot);
+          });
+        }
+        gallery.querySelector('[data-prev]').addEventListener('click', () => {
+          index = (index - 1 + items.length) % items.length;
+          render();
+        });
+        gallery.querySelector('[data-next]').addEventListener('click', () => {
+          index = (index + 1) % items.length;
+          render();
+        });
+        render();
       });
 
       const revealItems = document.querySelectorAll('.reveal');
