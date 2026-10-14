@@ -674,7 +674,7 @@
         const dots = gallery.querySelector('.gallery-dots');
         let index = 0;
 
-        function render() {
+        function render(autoplayVideo = false) {
           const item = items[index];
           stage.replaceChildren();
           const badge = document.createElement('span');
@@ -700,6 +700,11 @@
             media.loading = 'lazy';
           }
           stage.appendChild(media);
+          if (item.type === 'video' && autoplayVideo) {
+            media.play().catch(error => {
+              console.warn(`Could not autoplay gallery video "${item.src}".`, error);
+            });
+          }
           count.textContent = `${index + 1} / ${items.length}`;
           caption.textContent = item.title;
           dots.replaceChildren();
@@ -709,17 +714,17 @@
             dot.className = 'gallery-dot';
             dot.setAttribute('aria-label', `Show item ${dotIndex + 1}`);
             dot.setAttribute('aria-current', String(dotIndex === index));
-            dot.addEventListener('click', () => { index = dotIndex; render(); });
+            dot.addEventListener('click', () => { index = dotIndex; render(true); });
             dots.appendChild(dot);
           });
         }
         gallery.querySelector('[data-prev]').addEventListener('click', () => {
           index = (index - 1 + items.length) % items.length;
-          render();
+          render(true);
         });
         gallery.querySelector('[data-next]').addEventListener('click', () => {
           index = (index + 1) % items.length;
-          render();
+          render(true);
         });
         render();
       });
